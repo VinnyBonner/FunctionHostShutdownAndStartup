@@ -8,7 +8,7 @@ namespace HostShutdownStartupExample
     public class TimerTrigger
     {
         [FunctionName("TimerTrigger")]
-        public void Run([TimerTrigger("0 0 0 0 1 *")]TimerInfo myTimer, ILogger log)
+        public void Run([TimerTrigger("0 0 0 0 1 *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.UtcNow}");
 
